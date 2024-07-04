@@ -25,7 +25,7 @@ const Conversations = () => {
   return (
     <div className="flex h-full">
       <div className="w-1/3 border-r">
-        <Card className="h-full">
+        <Card className="h-full glow-on-hover glow-on-active">
           <CardHeader>
             <CardTitle>Conversations</CardTitle>
           </CardHeader>
@@ -56,7 +56,7 @@ const Conversations = () => {
               ))}
             </ScrollArea>
             <div className="p-4">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full glow-on-hover glow-on-active">
                 Load More
               </Button>
             </div>
@@ -65,7 +65,7 @@ const Conversations = () => {
       </div>
       <div className="w-2/3 p-4">
         {selectedConversation ? (
-          <Card className="h-full">
+          <Card className="h-full glow-on-hover glow-on-active">
             <CardHeader>
               <CardTitle>Chat with Elliot</CardTitle>
             </CardHeader>
@@ -86,7 +86,7 @@ const Conversations = () => {
                 </div>
               </ScrollArea>
               <div className="border-t p-4">
-                <Input placeholder="Message" />
+                <Input placeholder="Message" className="glow-on-hover glow-on-active" />
               </div>
             </CardContent>
           </Card>

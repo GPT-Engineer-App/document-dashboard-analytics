@@ -20,7 +20,7 @@ const data = {
 const Analytics = () => {
   return (
     <div className="p-4">
-      <Card>
+      <Card className="glow-on-hover glow-on-active">
         <CardHeader>
           <CardTitle>Analytics</CardTitle>
         </CardHeader>
