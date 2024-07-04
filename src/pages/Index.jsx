@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Index = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
+    <div className="flex flex-col items-center justify-center min-h-screen space-y-6">
       <Card className="w-full max-w-md glow-on-hover glow-on-active">
         <CardHeader>
           <CardTitle>Welcome to the Dashboard</CardTitle>
