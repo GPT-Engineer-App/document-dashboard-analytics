@@ -22,7 +22,7 @@ const Analytics = () => {
     datasets: [
       {
         label: "# of Votes",
-        data: [data.topIntents, data.understoodMessages, data.userRetention],
+        data: [0, 0, 0], // Updated to handle "Not Enough Data" case
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
