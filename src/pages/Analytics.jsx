@@ -3,7 +3,7 @@ import { Progress } from "@/components/ui/progress";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAnalyticsData } from "@/lib/api";
 import { BarChart2, MessageSquare, Clock, PieChart } from "lucide-react";
-import { Pie } from "react-chartjs-2";
+import { Pie, Line } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -34,6 +34,45 @@ const Analytics = () => {
           "rgba(255, 206, 86, 1)",
         ],
         borderWidth: 1,
+      },
+    ],
+  };
+
+  const totalConversationsData = {
+    labels: data.totalConversationsGraph.map((item) => item.time),
+    datasets: [
+      {
+        label: "Total Conversations",
+        data: data.totalConversationsGraph.map((item) => item.value),
+        fill: false,
+        borderColor: "rgba(75, 192, 192, 1)",
+        tension: 0.1,
+      },
+    ],
+  };
+
+  const userRetentionData = {
+    labels: data.userRetentionGraph.map((item) => item.interactions),
+    datasets: [
+      {
+        label: "User Retention",
+        data: data.userRetentionGraph.map((item) => item.value),
+        fill: false,
+        borderColor: "rgba(153, 102, 255, 1)",
+        tension: 0.1,
+      },
+    ],
+  };
+
+  const timeRetentionData = {
+    labels: data.timeRetentionGraph.map((item) => item.seconds),
+    datasets: [
+      {
+        label: "Time Retention",
+        data: data.timeRetentionGraph.map((item) => item.value),
+        fill: false,
+        borderColor: "rgba(255, 159, 64, 1)",
+        tension: 0.1,
       },
     ],
   };
@@ -104,6 +143,27 @@ const Analytics = () => {
             <div className="flex flex-col items-center">
               <PieChart className="h-6 w-6 mb-2" />
               <Pie data={pieData} />
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-100 glow-on-hover glow-on-active">
+          <CardContent>
+            <div className="flex flex-col items-center">
+              <Line data={totalConversationsData} />
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-100 glow-on-hover glow-on-active">
+          <CardContent>
+            <div className="flex flex-col items-center">
+              <Line data={userRetentionData} />
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-100 glow-on-hover glow-on-active">
+          <CardContent>
+            <div className="flex flex-col items-center">
+              <Line data={timeRetentionData} />
             </div>
           </CardContent>
         </Card>
