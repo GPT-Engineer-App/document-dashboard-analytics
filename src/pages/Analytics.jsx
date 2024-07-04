@@ -2,7 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAnalyticsData } from "@/lib/api";
-import { BarChart2, MessageSquare, Clock, TrendingUp, CheckCircle, UserCheck, UserPlus } from "lucide-react";
+import { BarChart2, MessageSquare, Clock, PieChart } from "lucide-react";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Analytics = () => {
   const { data, error, isLoading } = useQuery({
@@ -12,6 +16,27 @@ const Analytics = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data</div>;
+
+  const pieData = {
+    labels: ["Top Intents", "Understood Messages", "User Retention"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [data.topIntents, data.understoodMessages, data.userRetention],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
   return (
     <div className="flex flex-col items-center justify-center p-4 space-y-4">
@@ -77,27 +102,8 @@ const Analytics = () => {
         <Card className="bg-gray-100 glow-on-hover glow-on-active">
           <CardContent>
             <div className="flex flex-col items-center">
-              <TrendingUp className="h-6 w-6 mb-2" />
-              <span className="text-2xl">{data.topIntents}</span>
-              <span>Top Intents</span>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="bg-gray-100 glow-on-hover glow-on-active">
-          <CardContent>
-            <div className="flex flex-col items-center">
-              <CheckCircle className="h-6 w-6 mb-2" />
-              <span className="text-2xl">{data.understoodMessages}</span>
-              <span>Understood Messages</span>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="bg-gray-100 glow-on-hover glow-on-active">
-          <CardContent>
-            <div className="flex flex-col items-center">
-              <UserCheck className="h-6 w-6 mb-2" />
-              <span className="text-2xl">{data.userRetention}</span>
-              <span>User Retention</span>
+              <PieChart className="h-6 w-6 mb-2" />
+              <Pie data={pieData} />
             </div>
           </CardContent>
         </Card>
