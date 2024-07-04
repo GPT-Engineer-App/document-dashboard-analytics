@@ -14,7 +14,7 @@ const Analytics = () => {
 
   return (
     <div className="p-4 space-y-4">
-      <Card className="glow-on-hover glow-on-active">
+      <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
         <CardHeader>
           <CardTitle>Agent Analytics</CardTitle>
         </CardHeader>
@@ -24,7 +24,7 @@ const Analytics = () => {
               <span>Monthly interactions</span>
               <span>{data.monthlyInteractions} out of {data.totalInteractions} interactions /mo</span>
             </div>
-            <Progress value={(data.monthlyInteractions / data.totalInteractions) * 100} />
+            <Progress value={(data.monthlyInteractions / data.totalInteractions) * 100} className="bg-[#3503DA]" />
           </div>
           <div className="space-y-2 mt-4">
             <div className="flex justify-between items-center">
@@ -37,7 +37,7 @@ const Analytics = () => {
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.totalInteractions}</span>
@@ -45,7 +45,7 @@ const Analytics = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.totalConversations}</span>
@@ -53,7 +53,7 @@ const Analytics = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.avgMessagesPerChat}</span>
@@ -61,7 +61,7 @@ const Analytics = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.avgSecondsPerChat}</span>
@@ -69,7 +69,7 @@ const Analytics = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.topIntents}</span>
@@ -77,7 +77,7 @@ const Analytics = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.understoodMessages}</span>
@@ -85,7 +85,7 @@ const Analytics = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="glow-on-hover glow-on-active">
+        <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
               <span className="text-2xl">{data.userRetention}</span>
