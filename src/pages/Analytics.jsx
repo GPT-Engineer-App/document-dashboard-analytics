@@ -13,8 +13,8 @@ const Analytics = () => {
   if (error) return <div>Error loading data</div>;
 
   return (
-    <div className="p-4 space-y-4">
-      <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
+    <div className="flex flex-col items-center justify-center p-4 space-y-4">
+      <Card className="w-full max-w-3xl glow-on-hover glow-on-active border border-[#3503DA]">
         <CardHeader>
           <CardTitle>Agent Analytics</CardTitle>
         </CardHeader>
@@ -36,7 +36,7 @@ const Analytics = () => {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-3xl">
         <Card className="glow-on-hover glow-on-active border border-[#3503DA]">
           <CardContent>
             <div className="flex flex-col items-center">
