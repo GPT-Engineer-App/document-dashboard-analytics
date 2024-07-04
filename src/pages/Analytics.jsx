@@ -23,14 +23,14 @@ const Analytics = () => {
           <div className="space-y-2">
             <div className="flex justify-between items-center">
               <span>Monthly interactions</span>
-              <span>{data.monthlyInteractions} out of {data.totalInteractions} interactions /mo</span>
+              <span>Used {data.monthlyInteractions} out of {data.totalInteractions} interactions /mo</span>
             </div>
             <Progress value={(data.monthlyInteractions / data.totalInteractions) * 100} className="bg-[#3503DA]" />
           </div>
           <div className="space-y-2 mt-4">
             <div className="flex justify-between items-center">
               <span>AI Tokens Usage</span>
-              <span>{data.aiTokensUsed} out of {data.totalAiTokens} AI Tokens /mo</span>
+              <span>Used {data.aiTokensUsed} out of {data.totalAiTokens} AI Tokens /mo</span>
             </div>
             <Progress value={(data.aiTokensUsed / data.totalAiTokens) * 100} />
           </div>
