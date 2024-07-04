@@ -4,9 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchAnalyticsData } from "@/lib/api";
 import { BarChart2, MessageSquare, Clock, PieChart } from "lucide-react";
 import { Pie, Line } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement } from "chart.js";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
 
 const Analytics = () => {
   const { data, error, isLoading } = useQuery({
